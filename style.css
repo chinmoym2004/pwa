@@ -17,7 +17,7 @@
 
 
 body {
-  background: black url(background.jpeg) repeat-x center top;
+  background: black;
   background-size: 200px;
   color: white;
   text-align: center;
@@ -159,4 +159,11 @@ section table th {
 .actions button:hover:not(:disabled) {
   opacity: 1.0;
   cursor: pointer;
+}
+
+
+@media all and (display-mode: standalone) {
+  body {
+    background-color: yellow;
+  }
 }

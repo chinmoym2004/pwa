@@ -160,10 +160,3 @@ section table th {
   opacity: 1.0;
   cursor: pointer;
 }
-
-
-@media all and (display-mode: standalone) {
-  body {
-    background-color: yellow;
-  }
-}

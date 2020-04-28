@@ -25,10 +25,10 @@
 	<link href="/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
 	<link href="/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
 
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="style.css?v=<?=$_SERVER['REQUEST_TIME'];?>" media="screen" />
 	<link rel="manifest" href="manifest.json" />
 
-  	<script defer src="site.js"></script>
+  	<script defer src="site.js?v=<?=$_SERVER['REQUEST_TIME'];?>"></script>
 </head>
 <body>
 

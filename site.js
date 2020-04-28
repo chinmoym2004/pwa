@@ -2,6 +2,23 @@ navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(func
   console.log('Excellent, registered with scope: ', registration.scope);
 });
 
+const isSafari = () => {
+	return navigator.userAgent.indexOf('Safari') !== -1;
+};
+
+if (isSafari()) {
+	console.log('Service Worker not registered');
+} 
+else 
+{
+
+	if ('serviceWorker' in navigator && ENV.production) {
+	  navigator.serviceWorker.register('./sw.js');
+	  console.log('Service Worker registered');
+	}
+}
+
+
 // let deferredPrompt;
 // window.addEventListener('beforeinstallprompt', (e) => {
 //   // Prevent the mini-infobar from appearing on mobile
@@ -43,7 +60,10 @@ const isIos = () => {
 // Detects if device is in standalone mode
 const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
+console.log(isIos());
+
+console.log(isInStandaloneMode());
 // Checks if should display install popup notification:
 if (isIos() && !isInStandaloneMode()) {
-  this.setState({ showInstallMessage: true });
+  showInstallMessage=true;
 }
